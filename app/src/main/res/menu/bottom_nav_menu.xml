@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/action_alarm"
+        android:icon="@drawable/ic_alarm_foreground"
+        android:title="Alarm" />
+    <item
+        android:id="@+id/action_timer"
+        android:icon="@drawable/ic_timer_foreground"
+        android:title="Timer" />
+    <item
+        android:id="@+id/action_home"
+        android:icon="@drawable/ic_home_foreground"
+        android:title="Home" />
+    <item
+        android:id="@+id/action_stopwatch"
+        android:icon="@drawable/ic_stopwatch_foreground"
+        android:title="Stopwatch" />
+    <item
+        android:id="@+id/action_settings"
+        android:icon="@drawable/ic_settings_foreground"
+        android:title="Settings" />
+</menu>

@@ -1,0 +1,11 @@
+
+}
+java:S1450"[Remove the "recyclerView" field and declare it as a local variable in the relevant methods.(¿á© ıÿÿÿÿ8ÅåÅâÕ1
+X
+java:S2696#"6Make the enclosing method "static" or remove this set.(ÒÅğ£ÿÿÿÿÿ8Ï½óâÕ1
+L
+java:S1874-"/Remove this use of "execute"; it is deprecated.(Ö©Í8ÒñòâÕ1
+N
+java:S18740"1Remove this use of "AsyncTask"; it is deprecated.(×‹’©8ÔñòâÕ1
+l
+java:S1874:"JDon't override a deprecated method or explicitly mark it as "@Deprecated".(”é‡şÿÿÿÿ8×ñòâÕ1
