@@ -1,4 +1,5 @@
 package com.example.alarmapp.database;
+
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
@@ -11,12 +12,14 @@ public class AlarmEntity {
     private List<String> daysOfWeek;  // Przechowuje dni tygodnia, np. ["Monday", "Wednesday"]
     private int hour;
     private int minute;
+    private boolean isActive;
 
-    public AlarmEntity(int id, List<String> daysOfWeek, int hour, int minute) {
+    public AlarmEntity(int id, List<String> daysOfWeek, int hour, int minute, boolean isActive) {
         this.id = id;
         this.daysOfWeek = daysOfWeek;
         this.hour = hour;
         this.minute = minute;
+        this.isActive = isActive;
     }
 
     public int getId() {
@@ -45,5 +48,13 @@ public class AlarmEntity {
 
     public void setMinute(int minute) {
         this.minute = minute;
+    }
+
+    public boolean isActive() {
+        return isActive;
+    }
+
+    public void setActive(boolean active) {
+        isActive = active;
     }
 }

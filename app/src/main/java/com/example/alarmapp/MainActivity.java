@@ -24,8 +24,6 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
     private static AlarmDatabase alarmDatabase;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,13 +31,15 @@ public class MainActivity extends AppCompatActivity {
 
         alarmDatabase = Room.databaseBuilder(getApplicationContext(),
                 AlarmDatabase.class, "alarm-database").build();
-        addSampleAlarms();
+        //addSampleAlarms();
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavView);
 
         // Dodaj Fragment A jako domyślny
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.fragmentContainerView, new HomeFragment())
                 .commit();
+
+        bottomNavigationView.setSelectedItemId(R.id.action_home);
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -66,6 +66,7 @@ public class MainActivity extends AppCompatActivity {
                 return false;
             }
         });
+
     }
 
     // Metoda do dynamicznej zamiany fragmentów
@@ -89,8 +90,8 @@ public class MainActivity extends AppCompatActivity {
                 sampleDaysOfWeek.add("Wednesday");
 
                 // Dodanie kilku przykładowych alarmów
-                alarmDao.insert(new AlarmEntity(0, sampleDaysOfWeek, 8, 0)); // Alarm o 8:00 w poniedziałki i środy
-                alarmDao.insert(new AlarmEntity(0, sampleDaysOfWeek, 12, 30)); // Alarm o 12:30 w poniedziałki i środy
+                alarmDao.insert(new AlarmEntity(0, sampleDaysOfWeek, 8, 0, true)); // Alarm o 8:00 w poniedziałki i środy
+                alarmDao.insert(new AlarmEntity(0, sampleDaysOfWeek, 12, 30, true)); // Alarm o 12:30 w poniedziałki i środy
                 // Dodaj więcej alarmów według potrzeb
 
                 // Aktualizacja UI, jeśli jest to potrzebne

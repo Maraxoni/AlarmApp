@@ -1,36 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
-
-    <TextView
-        android:id="@+id/alarmTitleTextView"
+    android:layout_height="match_parent">
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingBottom="16dp"
-        android:text="Alarm"
-        android:textAlignment="center"
-        android:textSize="30sp" />
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp"><!-- Dodano padding do LinearLayout -->
 
-    <TextView
-        android:id="@+id/nextAlarm"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAlignment="center"
-        android:text="Next Alarm in:" />
+        <TextView
+            android:id="@+id/alarmTitleTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="16dp"
+            android:text="Alarm"
+            android:textAlignment="center"
+            android:textSize="30sp" /> <!-- Przeniesiono padding do TextView -->
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:text="Add Alarm" />
+        <TextView
+            android:id="@+id/nextAlarmIn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="16dp"
+            android:text="Next Alarm in:"
+            android:textAlignment="center" /> <!-- Dodano padding do TextView -->
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-</LinearLayout>
+        <Button
+            android:id="@+id/addAlarmButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:paddingTop="16dp"
+            android:text="Add Alarm" /> <!-- Dodano padding na górze do Button -->
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" /> <!-- Ustawiono layout_weight, aby RecyclerView zajmowało dostępne miejsce -->
+    </LinearLayout>
+</RelativeLayout>

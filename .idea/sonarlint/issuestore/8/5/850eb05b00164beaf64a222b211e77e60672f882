@@ -1,3 +1,17 @@
 
+E
+java:S1604>"(Make this anonymous inner class a lambda(ºÅÆı8äÄ…ıÕ1
+E
+java:S1604E"(Make this anonymous inner class a lambda(á¢‡8äÄ…ıÕ1
+h
+java:S2184U"FCast one of the operands of this multiplication operation to a "long".(…‹µ¿ÿÿÿÿÿ8åÄ…ıÕ1
+k
+java:S1659"IDeclare "minutePicker" and all following declarations on a separate line.(³¸±€üÿÿÿÿ8¬ŸıüÕ1
+O
+java:S1659"3Declare "cancelCountdownButton" on a separate line.(Ÿö»s8­ŸıüÕ1
+€
+java:S1450"dRemove the "cancelCountdownButton" field and declare it as a local variable in the relevant methods.(Ÿö»s8­ŸıüÕ1
+
+java:S1450"cRemove the "startCountdownButton" field and declare it as a local variable in the relevant methods.(Ÿö»s8­ŸıüÕ1
 W
-java:S1161":Add the "@Override" annotation above this method signature(«ÃÀ÷8÷ƒÔßÕ1
+java:S1161":Add the "@Override" annotation above this method signature(«ÃÀ÷8µ ıüÕ1

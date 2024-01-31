@@ -1,3 +1,21 @@
 
+E
+java:S16045"(Make this anonymous inner class a lambda(¨Æù¸8×œ¨ıÕ1
+E
+java:S1604<"(Make this anonymous inner class a lambda(‚úé¯8Ùœ¨ıÕ1
+E
+java:S1659")Declare "resetButton" on a separate line.(Œ’º8å¨ıÕ1
+v
+java:S1450"ZRemove the "resetButton" field and declare it as a local variable in the relevant methods.(Œ’º8æ¨ıÕ1
 W
-java:S1161":Add the "@Override" annotation above this method signature(«ÃÀ÷8¹«ÔßÕ1
+java:S1161$":Add the "@Override" annotation above this method signature(«ÃÀ÷8ë¨ıÕ1
+@
+java:S1128"Remove this duplicated import.(°şÊóøÿÿÿÿ8ó¨ıÕ1
+;
+java:S1128"Remove this duplicated import.(À¯ÑÇ8ó¨ıÕ1
+@
+java:S1128"Remove this duplicated import.(Ø½­äşÿÿÿÿ8ó¨ıÕ1
+;
+java:S1128"Remove this duplicated import.(‹îá8ó¨ıÕ1
+@
+java:S1128"Remove this duplicated import.(‚Š©“ùÿÿÿÿ8ô¨ıÕ1

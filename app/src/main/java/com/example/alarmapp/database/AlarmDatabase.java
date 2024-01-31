@@ -1,6 +1,9 @@
 package com.example.alarmapp.database;
 
+import android.content.Context;
+
 import androidx.room.Database;
+import androidx.room.Room;
 import androidx.room.RoomDatabase;
 import androidx.room.TypeConverters;
 
@@ -13,4 +16,10 @@ import com.example.alarmapp.database.AlarmEntity;
 public abstract class AlarmDatabase extends RoomDatabase {
 
     public abstract AlarmDao alarmDao();
+    public void clearAllTables() {
+        getOpenHelper().getWritableDatabase().execSQL("DELETE FROM alarms");
+    }
+
+    // Singleton instance for the database
+
 }
