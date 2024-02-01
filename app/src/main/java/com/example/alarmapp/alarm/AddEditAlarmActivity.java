@@ -4,6 +4,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.content.Intent;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TimePicker;
@@ -13,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.alarmapp.MainActivity;
 import com.example.alarmapp.R;
+import com.example.alarmapp.alarm.AlarmReceiver;
 import com.example.alarmapp.database.AlarmEntity;
 
 import java.util.ArrayList;
@@ -96,6 +98,11 @@ public class AddEditAlarmActivity extends AppCompatActivity {
         } else {
             AlarmEntity newAlarm = new AlarmEntity(0, daysOfWeek, hour, minute, true);
             new InsertAlarmTask().execute(newAlarm);
+
+            // Dodaj poniższe linie, aby wysłać broadcast informujący o zapisaniu nowego alarmu
+            Intent alarmIntent = new Intent(AlarmReceiver.ALARM_TRIGGER_ACTION);
+            alarmIntent.putExtra("ALARM_ID", newAlarm.getId());
+            sendBroadcast(alarmIntent);
         }
 
         setResult(RESULT_OK);

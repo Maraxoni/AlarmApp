@@ -1,3 +1,25 @@
 
+L
+java:S1066W"/Merge this if statement with the enclosing one.(©§¹8ƒ²¨‘Ö1
+E
+java:S1604I"(Make this anonymous inner class a lambda(÷Ò‚8ƒ²¨‘Ö1
 W
-java:S1161":Add the "@Override" annotation above this method signature(«ÃÀ÷8ñ×ÔßÕ1
+java:S1161!":Add the "@Override" annotation above this method signature(«ÃÀ÷8“³¨‘Ö1
+
+java:S11862"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ÀÄŞ’8”³¨‘Ö1
+
+java:S11866"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(çÅğÙ8•³¨‘Ö1
+
+java:S1186:"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ÁïÕÒ8•³¨‘Ö1
+g
+java:S18742"JDon't override a deprecated method or explicitly mark it as "@Deprecated".(ÀÄŞ’8•³¨‘Ö1
+y
+java:S3252?"WUse static access with "androidx.core.content.ContextCompat" for "checkSelfPermission".(®ª‰Ìùÿÿÿÿ8–³¨‘Ö1
+l
+java:S1874U"JDon't override a deprecated method or explicitly mark it as "@Deprecated".(Û›ë´øÿÿÿÿ8—³¨‘Ö1
+T
+java:S1874s"7Remove this use of "getFromLocation"; it is deprecated.(Î¼ï§8™³¨‘Ö1
+`
+java:S1155t">Use isEmpty() to check whether the collection is empty or not.(¦Áøÿÿÿÿ8™³¨‘Ö1
+z
+java:S3252€"WUse static access with "androidx.core.content.ContextCompat" for "checkSelfPermission".(®ª‰Ìùÿÿÿÿ8š³¨‘Ö1

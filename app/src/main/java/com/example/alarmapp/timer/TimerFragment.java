@@ -1,5 +1,9 @@
 package com.example.alarmapp.timer;
 
+import android.app.AlarmManager;
+import android.app.PendingIntent;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -14,6 +18,7 @@ import android.widget.Toast;
 import androidx.fragment.app.Fragment;
 
 import com.example.alarmapp.R;
+import com.example.alarmapp.alarm.AlarmReceiver;
 
 public class TimerFragment extends Fragment {
 
@@ -84,12 +89,20 @@ public class TimerFragment extends Fragment {
 
         totalMilliseconds = (hours * 3600 + minutes * 60 + seconds) * 1000;
 
+        if (totalMilliseconds <= 0) {
+            Toast.makeText(getContext(), "Wybierz poprawny czas odliczania.", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
         // Uruchomienie odliczania przy użyciu Runnable i Handlera
         handler.post(countdownRunnable);
 
         // Wyświetlenie komunikatu o rozpoczęciu odliczania
         String message = String.format("Odliczanie rozpoczęte na %d godzin, %d minut, %d sekund.", hours, minutes, seconds);
         Toast.makeText(getContext(), message, Toast.LENGTH_SHORT).show();
+
+        // Zablokuj przycisk "Rozpocznij odliczanie"
+        startCountdownButton.setEnabled(false);
     }
 
     private void updateCountdown() {
@@ -109,19 +122,41 @@ public class TimerFragment extends Fragment {
             // Obsługa zakończenia odliczania
             handleCountdownFinish();
         }
-
     }
 
     private void handleCountdownFinish() {
         // Obsługa zakończenia odliczania
         countdownTextView.setText("00:00:00");
         Toast.makeText(getContext(), "Odliczanie zakończone!", Toast.LENGTH_SHORT).show();
+
+        // Odblokuj przycisk "Rozpocznij odliczanie"
+        startCountdownButton.setEnabled(true);
+
+        // Dodaj odpalanie budzika
+        startAlarm();
+    }
+    private void startAlarm() {
+        // Tworzenie Intent dla AlarmReceiver
+        Intent alarmIntent = new Intent(getContext(), AlarmReceiver.class);
+
+        // Tworzenie PendingIntent
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(getContext(), 0, alarmIntent, PendingIntent.FLAG_CANCEL_CURRENT);
+
+        // Ustawienie alarmu na określony czas po zakończeniu odliczania
+        AlarmManager alarmManager = (AlarmManager) requireContext().getSystemService(Context.ALARM_SERVICE);
+        if (alarmManager != null) {
+            long triggerTime = System.currentTimeMillis() + 5000; // Przykładowy czas uruchomienia alarmu po 5 sekundach (możesz dostosować)
+            alarmManager.set(AlarmManager.RTC_WAKEUP, triggerTime, pendingIntent);
+        }
     }
 
     private void cancelCountdown() {
         // Implementacja anulowania odliczania
         handler.removeCallbacks(countdownRunnable);
-        countdownTextView.setText("00:00:00");  // Zresetowanie TextView
+        countdownTextView.setText("00:00:00");
         Toast.makeText(getContext(), "Odliczanie anulowane!", Toast.LENGTH_SHORT).show();
+
+        // Odblokuj przycisk "Rozpocznij odliczanie"
+        startCountdownButton.setEnabled(true);
     }
 }

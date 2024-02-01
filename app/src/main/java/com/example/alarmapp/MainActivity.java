@@ -23,6 +23,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     private static AlarmDatabase alarmDatabase;
+    public static final String EXTRA_FRAGMENT_TO_LOAD = "EXTRA_FRAGMENT_TO_LOAD";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

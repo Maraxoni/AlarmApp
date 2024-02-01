@@ -1,5 +1,6 @@
 package com.example.alarmapp.alarm;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -11,7 +12,6 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DividerItemDecoration;
-import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -96,21 +96,51 @@ public class AlarmFragment extends Fragment {
     }
 
     private void loadAlarms() {
-        new LoadAlarmsAsyncTask().execute();
+        new LoadAlarmsAsyncTask(getContext()).execute();
     }
 
     private static class LoadAlarmsAsyncTask extends AsyncTask<Void, Void, List<AlarmEntity>> {
+        private Context context;
+
+        LoadAlarmsAsyncTask(Context context) {
+            this.context = context;
+        }
+
+        // Konstruktor bezargumentowy
+        LoadAlarmsAsyncTask() {
+            // Pusty konstruktor
+        }
+
         @Override
         protected List<AlarmEntity> doInBackground(Void... voids) {
             AlarmDatabase appDatabase = MainActivity.getAlarmDatabase();
             AlarmDao alarmDao = appDatabase.alarmDao();
-            return alarmDao.getAllAlarms();
+            List<AlarmEntity> alarms = alarmDao.getAllAlarms();
+
+            // Sprawdzanie, czy każdy alarm powinien być aktywowany
+            for (AlarmEntity alarm : alarms) {
+                if (shouldActivateAlarm(alarm)) {
+                    // Tworzenie nowego Intentu AlarmActivity, jeśli alarm powinien być aktywowany
+                    Intent alarmActivityIntent = new Intent(context, AlarmActivity.class);
+                    alarmActivityIntent.putExtra("ALARM_ID", alarm.getId());
+                    alarmActivityIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    context.startActivity(alarmActivityIntent);
+                }
+            }
+
+            return alarms;
         }
 
         @Override
         protected void onPostExecute(List<AlarmEntity> alarms) {
             alarmAdapter.setAlarms(alarms);
             alarmAdapter.notifyDataSetChanged();
+        }
+
+        private boolean shouldActivateAlarm(AlarmEntity alarm) {
+            // Tu wpisz logikę sprawdzającą, czy alarm powinien zostać aktywowany
+            // Możesz użyć kodu z poprzedniej odpowiedzi, czyli zawierającego logikę czasową, dni tygodnia itp.
+            return alarm.isActive();  // Na potrzeby przykładu, zawsze aktywuj alarm
         }
     }
 

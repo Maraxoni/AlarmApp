@@ -1,23 +1,23 @@
 
 i
-java:S1659"LDeclare "tuesdayCheckBox" and all following declarations on a separate line.(“À8ñÓò‹Ö1
+java:S1659 "LDeclare "tuesdayCheckBox" and all following declarations on a separate line.(“À8ñÓò‹Ö1
 ~
-java:S1450"\Remove the "labelEditText" field and declare it as a local variable in the relevant methods.(ß—£õûÿÿÿÿ8òÓò‹Ö1
+java:S1450"\Remove the "labelEditText" field and declare it as a local variable in the relevant methods.(ß—£õûÿÿÿÿ8òÓò‹Ö1
 {
-java:S1450"YRemove the "saveButton" field and declare it as a local variable in the relevant methods.(Éÿ¤ûÿÿÿÿ8òÓò‹Ö1
+java:S1450"YRemove the "saveButton" field and declare it as a local variable in the relevant methods.(Éÿ¤ûÿÿÿÿ8òÓò‹Ö1
 L
-java:S18745"/Remove this use of "execute"; it is deprecated.(îİ£ñ8ùü­„Ö1
+java:S18747"/Remove this use of "execute"; it is deprecated.(îİ£ñ8ùü­„Ö1
 Q
-java:S1874_"/Remove this use of "execute"; it is deprecated.(ÄÌ×—üÿÿÿÿ8úü­„Ö1
+java:S1874a"/Remove this use of "execute"; it is deprecated.(ÄÌ×—üÿÿÿÿ8úü­„Ö1
 Q
-java:S1874b"/Remove this use of "execute"; it is deprecated.(¥ÛÙùÿÿÿÿ8ˆÔò‹Ö1
+java:S1874d"/Remove this use of "execute"; it is deprecated.(¥ÛÙùÿÿÿÿ8Ñò¿Ö1
 N
-java:S1874i"1Remove this use of "AsyncTask"; it is deprecated.(ê¼Úæ8ûü­„Ö1
+java:S1874p"1Remove this use of "AsyncTask"; it is deprecated.(ê¼Úæ8ûü­„Ö1
 N
-java:S1874q"1Remove this use of "AsyncTask"; it is deprecated.(À’¯°8üü­„Ö1
-S
-java:S1874y"1Remove this use of "AsyncTask"; it is deprecated.(¾Íºšúÿÿÿÿ8€ı­„Ö1
+java:S1874x"1Remove this use of "AsyncTask"; it is deprecated.(À’¯°8üü­„Ö1
+T
+java:S1874€"1Remove this use of "AsyncTask"; it is deprecated.(¾Íºšúÿÿÿÿ8€ı­„Ö1
 m
-java:S1874Š"JDon't override a deprecated method or explicitly mark it as "@Deprecated".(¸¶”ıüÿÿÿÿ8ı­„Ö1
+java:S1874‘"JDon't override a deprecated method or explicitly mark it as "@Deprecated".(¸¶”ıüÿÿÿÿ8ãµ»Ö1
 S
-java:S1068"1Remove this unused "labelEditText" private field.(ß—£õûÿÿÿÿ8Ôò‹Ö1
+java:S1068"1Remove this unused "labelEditText" private field.(ß—£õûÿÿÿÿ8Ôò‹Ö1
