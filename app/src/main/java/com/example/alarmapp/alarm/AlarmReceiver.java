@@ -4,64 +4,64 @@ import android.app.AlarmManager;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
-import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
-import android.os.PowerManager;
 import android.util.Log;
 
+import androidx.annotation.NonNull;
+import androidx.core.app.JobIntentService;
 import androidx.core.app.NotificationCompat;
 
 import com.example.alarmapp.MainActivity;
 import com.example.alarmapp.R;
+import com.example.alarmapp.alarm.AlarmActivity;
 import com.example.alarmapp.database.AlarmDatabase;
 import com.example.alarmapp.database.AlarmEntity;
 
 import java.util.Calendar;
 import java.util.List;
 
-public class AlarmReceiver extends BroadcastReceiver {
+public class AlarmReceiver extends JobIntentService {
 
     private static final String TAG = "AlarmReceiver";
     public static final String ALARM_TRIGGER_ACTION = "2";
 
+    private static final int JOB_ID = 123;
+
+    public static void enqueueWork(Context context, Intent work) {
+        enqueueWork(context, AlarmReceiver.class, JOB_ID, work);
+    }
+
     @Override
-    public void onReceive(Context context, Intent intent) {
-        PowerManager powerManager = (PowerManager) context.getSystemService(Context.POWER_SERVICE);
-        PowerManager.WakeLock wakeLock = powerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "MyApp::MyWakelockTag");
-        wakeLock.acquire(10 * 60 * 1000L /*10 minutes*/);
+    protected void onHandleWork(@NonNull Intent intent) {
+        Log.d(TAG, "JobIntentService started");
 
         try {
-            Log.d(TAG, "Wywolanie123");
-            try {
-                int alarmId = intent.getIntExtra("ALARM_ID", -1);
-                Log.d(TAG, "Received alarm with ID: " + alarmId);
+            int alarmId = intent.getIntExtra("ALARM_ID", -1);
+            Log.d(TAG, "Received alarm with ID: " + alarmId);
 
-                // Pobierz informacje o alarmie z bazy danych
-                AlarmEntity alarmEntity = getAlarmFromDatabase(context, alarmId);
+            // Pobierz informacje o alarmie z bazy danych
+            AlarmEntity alarmEntity = getAlarmFromDatabase(this, alarmId);
 
-                if (alarmEntity != null) {
-                    // Sprawdź, czy alarm powinien zostać aktywowany w danym momencie
-                    if (shouldActivateAlarm(alarmEntity)) {
-                        // Wywołaj powiadomienie
-                        showNotification(context, alarmEntity);
+            if (alarmEntity != null) {
+                // Sprawdź, czy alarm powinien zostać aktywowany w danym momencie
+                if (shouldActivateAlarm(alarmEntity)) {
+                    // Wywołaj powiadomienie
+                    showNotification(this, alarmEntity);
 
-                        // Uruchom AlarmActivity
-                        Intent alarmActivityIntent = new Intent(context, AlarmActivity.class);
-                        alarmActivityIntent.putExtra("ALARM_ID", alarmEntity.getId());
-                        alarmActivityIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                        context.startActivity(alarmActivityIntent);
+                    // Uruchom AlarmActivity
+                    Intent alarmActivityIntent = new Intent(this, AlarmActivity.class);
+                    alarmActivityIntent.putExtra("ALARM_ID", alarmEntity.getId());
+                    alarmActivityIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    startActivity(alarmActivityIntent);
 
-                        // Ustaw budzik za pomocą AlarmManager
-                        setAlarmUsingAlarmManager(context, alarmEntity);
-                    }
+                    // Ustaw budzik za pomocą AlarmManager
+                    setAlarmUsingAlarmManager(this, alarmEntity);
                 }
-            } catch (Exception e) {
-                Log.e(TAG, "Error in onReceive: " + e.getMessage());
             }
-        } finally {
-            wakeLock.release();
+        } catch (Exception e) {
+            Log.e(TAG, "Error in onHandleWork: " + e.getMessage());
         }
     }
 
@@ -71,27 +71,23 @@ public class AlarmReceiver extends BroadcastReceiver {
     }
 
     private boolean shouldActivateAlarm(AlarmEntity alarmEntity) {
-        // Sprawdź, czy obecny czas pasuje do ustawień alarmu (godzina, minuta, dni tygodnia)
-        Log.d(TAG, "Wywolanie");
+        // Pobierz obecny czas
         Calendar now = Calendar.getInstance();
-        int currentHour = now.get(Calendar.HOUR_OF_DAY);
-        int currentMinute = now.get(Calendar.MINUTE);
-        int currentDayOfWeek = now.get(Calendar.DAY_OF_WEEK);
 
+        // Pobierz godzinę, minutę i dzień tygodnia z obiektu AlarmEntity
         int alarmHour = alarmEntity.getHour();
         int alarmMinute = alarmEntity.getMinute();
         int[] alarmDaysOfWeek = convertDaysOfWeekToIntArray(alarmEntity.getDaysOfWeek());
 
-        boolean isCorrectTime = currentHour == alarmHour && currentMinute == alarmMinute;
-        boolean isCorrectDayOfWeek = isDayOfWeekMatch(alarmDaysOfWeek, currentDayOfWeek);
+        // Sprawdź, czy obecny czas pasuje do ustawień alarmu (godzina, minuta, dni tygodnia)
+        boolean isCorrectTime = now.get(Calendar.HOUR_OF_DAY) == alarmHour && now.get(Calendar.MINUTE) == alarmMinute;
+        boolean isCorrectDayOfWeek = isDayOfWeekMatch(alarmDaysOfWeek, now.get(Calendar.DAY_OF_WEEK));
 
-        Log.d(TAG, "shouldActivateAlarm: Current time - " + currentHour + ":" + currentMinute);
-        Log.d(TAG, "shouldActivateAlarm: Alarm time - " + alarmHour + ":" + alarmMinute);
-        Log.d(TAG, "shouldActivateAlarm: Is correct time? " + isCorrectTime);
-        Log.d(TAG, "shouldActivateAlarm: Is correct day of week? " + isCorrectDayOfWeek);
-
+        // Zwróć true, jeśli alarm powinien być aktywowany
         return alarmEntity.isActive() && isCorrectTime && isCorrectDayOfWeek;
     }
+
+    
 
     private boolean isDayOfWeekMatch(int[] alarmDaysOfWeek, int currentDayOfWeek) {
         for (int alarmDay : alarmDaysOfWeek) {

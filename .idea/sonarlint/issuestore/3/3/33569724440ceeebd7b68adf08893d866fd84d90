@@ -1,19 +1,21 @@
 
 E
-java:S1604F"(Make this anonymous inner class a lambda(£¿š¬8×÷¸’Ö1
+java:S1604Y"(Make this anonymous inner class a lambda(£¿š¬8­©Ö1
 y
-java:S1450"\Remove the "alarmSoundUri" field and declare it as a local variable in the relevant methods.(öïÿª8×½µ’Ö1
+java:S1450"\Remove the "accelerometer" field and declare it as a local variable in the relevant methods.( ×ö8É²‹›Ö1
+~
+java:S1450"\Remove the "alarmSoundUri" field and declare it as a local variable in the relevant methods.(¼º»Ãüÿÿÿÿ8É²‹›Ö1
+y
+java:S1450"\Remove the "sensorManager" field and declare it as a local variable in the relevant methods.(Ş¬–„8â©Ö1
 L
-java:S1874#"/Remove this use of "execute"; it is deprecated.(çæÔ‘8Ñ²¶’Ö1
+java:S1874,"/Remove this use of "execute"; it is deprecated.(çæÔ‘8ì©Ö1
 X
-java:S2696)"6Make the enclosing method "static" or remove this set.(Ÿï¡©ÿÿÿÿÿ8Œø¸’Ö1
+java:S2696="6Make the enclosing method "static" or remove this set.(Ÿï¡©ÿÿÿÿÿ8î©Ö1
 S
-java:S2696*"6Make the enclosing method "static" or remove this set.(Æ£©µ8Œø¸’Ö1
+java:S2696>"6Make the enclosing method "static" or remove this set.(Æ£©µ8î©Ö1
 M
-java:S18746"1Remove this use of "AsyncTask"; it is deprecated.(‰¶¶J8ø¸’Ö1
+java:S1874H"1Remove this use of "AsyncTask"; it is deprecated.(‰¶¶J8ï©Ö1
 g
-java:S1874>"JDon't override a deprecated method or explicitly mark it as "@Deprecated".(ü¨³½8‘ø¸’Ö1
-L
-java:S33980"*Move this method into "GetAlarmAsyncTask".(ˆ›•¢şÿÿÿÿ8”ø¸’Ö1
+java:S1874P"JDon't override a deprecated method or explicitly mark it as "@Deprecated".(ü¨³½8ğ©Ö1
 G
-java:S3398&"*Move this method into "GetAlarmAsyncTask".(èÚÅÄ8”ø¸’Ö1
+java:S3398<"*Move this method into "GetAlarmAsyncTask".(èÚÅÄ8ó©Ö1

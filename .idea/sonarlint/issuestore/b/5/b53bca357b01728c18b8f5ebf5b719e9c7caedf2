@@ -1,8 +1,10 @@
 
 e
-java:S1192&"IDefine a constant instead of duplicating this literal "ALARM_ID" 3 times.(¿¡‚`8šÚÆ‘Ö1
+java:S1192)"IDefine a constant instead of duplicating this literal "ALARM_ID" 3 times.(¿¡‚`8»Ğ¡›Ö1
 Q
-java:S1066."/Merge this if statement with the enclosing one.(¼„ë²øÿÿÿÿ8šÚÆ‘Ö1
+java:S10661"/Merge this if statement with the enclosing one.(¼„ë²øÿÿÿÿ8»Ğ¡›Ö1
+T
+java:S1874"8Remove this use of "JobIntentService"; it is deprecated.(é·„ 8ÌÑ¡›Ö1
 K
-java:S1172D".Remove this unused method parameter "context".(ê×ä”8ƒııÖ1
->	java:S131l""Add a default case to this switch.(®Ã¯8ŠııÖ1
+java:S1172D".Remove this unused method parameter "context".(ê×ä”8ØÑ¡›Ö1
+>	java:S131h""Add a default case to this switch.(®Ã¯8ÜÑ¡›Ö1

@@ -1,35 +1,48 @@
 
 E
-java:S1604*"(Make this anonymous inner class a lambda(ëŸŠ¦8ß…’Ö1
+java:S16046"(Make this anonymous inner class a lambda(ëŸŠ¦8ä”Ö1
+E
+java:S1604>"(Make this anonymous inner class a lambda(˜¢„8ä”Ö1
+h
+java:S2184("FCast one of the operands of this multiplication operation to a "long".(À›Šİşÿÿÿÿ8ïß±Ö1
 z
-java:S1450"]Remove the "addAlarmButton" field and declare it as a local variable in the relevant methods.(œôöş8§†’Ö1
+java:S1450$"]Remove the "addAlarmButton" field and declare it as a local variable in the relevant methods.(œôöş8µà±Ö1
+]	java:S125\"<This block of commented-out lines of code should be removed.(ÃÚ¤ıÿÿÿÿÿ8Ÿ”Ö1
+L
+java:S1874a"/Remove this use of "execute"; it is deprecated.(ˆíŒÄ8ùŠÍÖ1
 S
-java:S2696:"6Make the enclosing method "static" or remove this set.(Î¦¦È8±†’Ö1
+java:S2696h"6Make the enclosing method "static" or remove this set.(Î¦¦È8üŠÍÖ1
 `
-java:S1874P">Remove this use of "startActivityForResult"; it is deprecated.(İù˜Ûúÿÿÿÿ8·†’Ö1
-`
-java:S1874V">Remove this use of "startActivityForResult"; it is deprecated.(İù˜Ûúÿÿÿÿ8·†’Ö1
-l
-java:S1874Z"JDon't override a deprecated method or explicitly mark it as "@Deprecated".(ÉÎÍïıÿÿÿÿ8¸†’Ö1
-Z
-java:S1874["8Remove this use of "onActivityResult"; it is deprecated.(ß¬©úÿÿÿÿ8¸†’Ö1
+java:S1874~">Remove this use of "startActivityForResult"; it is deprecated.(İù˜Ûúÿÿÿÿ8‹ÍÖ1
+a
+java:S1874„">Remove this use of "startActivityForResult"; it is deprecated.(İù˜Ûúÿÿÿÿ8‚‹ÍÖ1
+m
+java:S1874ˆ"JDon't override a deprecated method or explicitly mark it as "@Deprecated".(ÉÎÍïıÿÿÿÿ8‚‹ÍÖ1
 [
-java:S3252\">Use static access with "android.app.Activity" for "RESULT_OK".(·Ì¾’8¸†’Ö1
-Q
-java:S1874c"/Remove this use of "execute"; it is deprecated.(ëéø›şÿÿÿÿ8¼†’Ö1
-N
-java:S1874f"1Remove this use of "AsyncTask"; it is deprecated.(×‹’©8¾†’Ö1
-m
-java:S1874‡"JDon't override a deprecated method or explicitly mark it as "@Deprecated".(”é‡şÿÿÿÿ8Æ‰’’Ö1
+java:S1874‰"8Remove this use of "onActivityResult"; it is deprecated.(ß¬©úÿÿÿÿ8ƒ‹ÍÖ1
+\
+java:S3252Š">Use static access with "android.app.Activity" for "RESULT_OK".(·Ì¾’8ƒ‹ÍÖ1
 R
-java:S1874”"/Remove this use of "execute"; it is deprecated.(“®ºùùÿÿÿÿ8½†’Ö1
+java:S1874’"/Remove this use of "execute"; it is deprecated.(ëéø›şÿÿÿÿ8ƒ‹ÍÖ1
 O
-java:S1874—"1Remove this use of "AsyncTask"; it is deprecated.(ŞÊ’Ä8È‰’’Ö1
+java:S1874•"1Remove this use of "AsyncTask"; it is deprecated.(×‹’©8„‹ÍÖ1
 m
-java:S1874¡"JDon't override a deprecated method or explicitly mark it as "@Deprecated".(Û¶…óøÿÿÿÿ8É‰’’Ö1
-M
-java:S1874¢"/Remove this use of "execute"; it is deprecated.(Ö©Í8É‰’’Ö1
+java:S1874¥"JDon't override a deprecated method or explicitly mark it as "@Deprecated".(”é‡şÿÿÿÿ8Š‹ÍÖ1
 R
-java:S1874¨"/Remove this use of "execute"; it is deprecated.(ª“êûÿÿÿÿ8Ê‰’’Ö1
+java:S1874¬"/Remove this use of "execute"; it is deprecated.(ÚÏ§€ûÿÿÿÿ8‰‹ÍÖ1
+R
+java:S1874×"/Remove this use of "execute"; it is deprecated.(“®ºùùÿÿÿÿ8‹‹ÍÖ1
+O
+java:S1874Ú"1Remove this use of "AsyncTask"; it is deprecated.(ŞÒèÊ8‰‹ÍÖ1
+m
+java:S1874å"JDon't override a deprecated method or explicitly mark it as "@Deprecated".(”é‡şÿÿÿÿ8´èÖ1
+R
+java:S1874ï"/Remove this use of "execute"; it is deprecated.(ª“êûÿÿÿÿ8µèÖ1
 T
-java:S1874«"1Remove this use of "AsyncTask"; it is deprecated.(ÍÀÉ±ùÿÿÿÿ8Ê‰’’Ö1
+java:S1874ò"1Remove this use of "AsyncTask"; it is deprecated.(ÍÀÉ±ùÿÿÿÿ8Œ‹ÍÖ1
+T
+java:S1874ı"1Remove this use of "AsyncTask"; it is deprecated.(ƒ¾å‰ÿÿÿÿÿ8‹ÍÖ1
+[
+java:S1144°"8Remove this unused private "shouldActivateAlarm" method.(ŒŸñ»ûÿÿÿÿ8‘‹ÍÖ1
+U
+java:S1144¾"2Remove this unused private "isCorrectTime" method.(Ğ»­Üıÿÿÿÿ8ÄÃ×Ö1

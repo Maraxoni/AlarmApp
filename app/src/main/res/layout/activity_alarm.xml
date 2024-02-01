@@ -17,13 +17,29 @@
 
     <!-- Dodaj inne elementy interfejsu użytkownika, np. informacje o alarmie -->
 
+    <TextView
+        android:id="@+id/alarmDescTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Make a move with phone to unlock"
+        android:layout_centerInParent="true" /> <!-- Dodano atrybut, aby wyśrodkować w pionie i poziomie -->
+
+    <TextView
+        android:id="@+id/accelerometerValuesTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Values"
+        android:layout_below="@id/alarmDescTextView"
+        android:layout_marginTop="16dp"
+        android:layout_centerHorizontal="true" /> <!-- Dodano atrybuty, aby wyśrodkować w pionie i poziomie -->
+
     <Button
         android:id="@+id/cancelButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Anuluj"
         android:layout_centerHorizontal="true"
-        android:layout_below="@id/alarmTitleTextView"
+        android:layout_below="@id/accelerometerValuesTextView"
         android:layout_marginTop="16dp"/>
 
 </RelativeLayout>
